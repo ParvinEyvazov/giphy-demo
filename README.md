@@ -1,5 +1,9 @@
 # GiphyDemo
 
+This is just a demo app for fun that how to use giphy API.
+
+<img src="src/assets/gifs/earth.gif" width = "400"> <img src="src/assets/gifs/meme.gif" width = "400">
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.2.
 
 ## Development server
