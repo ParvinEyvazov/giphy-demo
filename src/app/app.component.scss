@@ -1,16 +1,26 @@
 .title {
   text-align: center;
   margin-bottom: 30px;
-  span {
+
+  .text {
     color: aliceblue;
-    font-size: 3rem;
-    font-weight: bold;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
+
+  .title-text {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+  .sub-text {
+    font-size: 0.8rem;
+  }
+
   .text-input {
+    margin: 20px;
     padding: 10px;
     border: 0;
-    box-shadow: 0 0 15px 4px aliceblue;
+    box-shadow: 0 0 25px 3px aliceblue;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     outline: none;
   }
@@ -47,3 +57,55 @@
   }
 }
 // color: #111727
+
+.link {
+  padding: 15px 30px;
+  margin: 10px;
+  display: inline-block;
+  color: #000;
+  background: #ffce54;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+@-webkit-keyframes push-on-hover {
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes push-on-hover {
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+.push-on-hover {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.push-on-hover:active {
+  -webkit-animation-name: push-on-hover;
+  animation-name: push-on-hover;
+  -webkit-animation-duration: 0.2s;
+  animation-duration: 0.2s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}

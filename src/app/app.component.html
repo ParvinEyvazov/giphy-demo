@@ -1,5 +1,7 @@
 <div class="title">
-  <span>Giphy demo</span>
+  <span class="text title-text">Giphy demo</span>
+  <br />
+  <span class="text sub-text">click to copy link</span>
   <hr />
 
   <input
@@ -7,7 +9,7 @@
     type="text"
     #input="ngModel"
     [(ngModel)]="search_text"
-    placeholder="Search..."
+    placeholder="Search any content..."
   />
 </div>
 
@@ -15,14 +17,22 @@
   <div class="gif-container" *ngIf="gifs.length > 0">
     <span>Gifs</span>
     <hr />
-    <div class="gif" *ngFor="let gif of gifs">
+    <div
+      class="gif push-on-hover"
+      *ngFor="let gif of gifs"
+      (click)="copyString(gif)"
+    >
       <img src="{{ gif }}" alt="gif" />
     </div>
   </div>
   <div class="sticker-container" *ngIf="stickers.length > 0">
     <span>Stickers</span>
     <hr />
-    <div class="sticker" *ngFor="let sticker of stickers">
+    <div
+      class="sticker push-on-hover"
+      *ngFor="let sticker of stickers"
+      (click)="copyString(sticker)"
+    >
       <img src="{{ sticker }}" alt="gif" />
     </div>
   </div>

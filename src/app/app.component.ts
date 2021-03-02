@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ViewChild } from '@angular/core';
 import { debounceTime } from 'rxjs/operators';
+import { MicroService } from './services/micro.service';
 
 @Component({
   selector: 'app-root',
@@ -20,17 +21,17 @@ export class AppComponent implements OnInit {
   gifs: string[] = [];
   stickers: string[] = [];
 
-  constructor(private http: HttpClient) {}
-
-  ngAfterViewInit() {
-    this.input.update.pipe(debounceTime(500)).subscribe((value) => {
-      this.findGifs(value);
-    });
-  }
+  constructor(private http: HttpClient, private microService: MicroService) {}
 
   ngOnInit(): void {}
 
-  findGifs(search_text) {
+  ngAfterViewInit() {
+    this.input.update.pipe(debounceTime(1000)).subscribe((value) => {
+      this.findContent(value);
+    });
+  }
+
+  findContent(search_text) {
     if (search_text) {
       this.getGifs(search_text)
         .toPromise()
@@ -71,5 +72,9 @@ export class AppComponent implements OnInit {
     gif_array.forEach((element) => {
       this.stickers.push(element.images.original.url);
     });
+  }
+
+  copyString(string) {
+    this.microService.copyMessage(string);
   }
 }
