@@ -16,6 +16,18 @@
     font-size: 0.8rem;
   }
 
+  .giphy-text {
+    text-decoration: none;
+    font-size: 0.8rem;
+    .giphy-link {
+      color: aliceblue;
+      text-decoration: none;
+      cursor: pointer;
+      outline: none;
+      font-weight: bold;
+    }
+  }
+
   .text-input {
     margin: 20px;
     padding: 10px;
